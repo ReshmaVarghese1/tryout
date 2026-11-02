@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import { Routes } from '../../api/endpoints/routes';
 
 dotenv.config();
-
 test.describe('FakeStore Authentication API Tests', () => {
   const baseUrl = process.env.API_BASE_URL || Routes.BASE_URL;
 
