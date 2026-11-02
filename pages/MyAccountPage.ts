@@ -11,7 +11,7 @@ export class MyAccountPage {
     this.page = page;
 
     // Initialize locators with CSS selectors
-    this.heading = page.getByRole('heading', { name: 'My Account' });
+    this.heading = page.locator('#content').getByRole('heading', { name: 'My Account' });
     this.logoutLink = page.locator('a[href*="route=account/logout"]').first();
   }
 
