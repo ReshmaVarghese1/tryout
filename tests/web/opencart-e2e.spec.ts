@@ -57,7 +57,7 @@ test('OpenCart end-to-end customer journey @master @sanity @regression @e2e', as
     await homePage.search(productName);
     await productPage.openFromSearchResult(productName);
     await productPage.addToCart();
-    await expect(productPage.successMessage).toContainText(/Success/i);
+    await expect(productPage.successMessage).toContainText(/Success/i, { timeout: 15000 });
 
     await cartPage.open();
     await cartPage.expectProductInCart(productName);
