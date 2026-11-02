@@ -9,7 +9,9 @@ test.describe('FakeStore Authentication API Tests', () => {
   test('POST - Successful login @master @sanity @api', async ({ request }) => {
     const username = process.env.API_USERNAME || 'mor_2314';
     const password = process.env.API_PASSWORD || '83r5^_';
-
+      if (!username || !password) {
+      throw new Error('Missing API_USERNAME or API_PASSWORD environment variables');
+    }
     const response = await request.post(`${baseUrl}${Routes.AUTH_LOGIN}`, {
       data: { username, password },
     });
