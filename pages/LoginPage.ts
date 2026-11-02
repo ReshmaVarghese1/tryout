@@ -11,8 +11,6 @@ export class LoginPage {
 
   constructor(page: Page) {
     this.page = page;
-
-    // Initialize locators with CSS selectors
     this.emailInput = page.locator('input[name="email"]');
     this.passwordInput = page.locator('input[name="password"]');
     this.loginButton = page.locator('input[value="Login"], button[type="submit"]').first();
